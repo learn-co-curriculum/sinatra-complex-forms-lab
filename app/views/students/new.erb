@@ -1,0 +1,22 @@
+<h1>Create a new student</h1>
+
+<form action="/students" method="POST">
+  <label>Name:</label>
+  
+  <br></br>
+  
+  <input type="text" name="student[name]" id="student_name">
+  
+  <br></br>
+
+  <%Star.all.each do |star|%>
+    <input type="checkbox" name="student[star_ids][]" id="<%= star.name %>" value="<%=star.id%>"><%=star.name%></input>
+  <%end%>
+
+  <br></br>
+    <label>name:</label>
+      <input  type="text" name="star[name]" id="star_name"></input>
+    <br></br>
+
+  <input type="submit" value="Create Student">
+</form>

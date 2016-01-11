@@ -1,0 +1,28 @@
+<h1>Update Star</h1>
+
+<form action="/stars/<%=@star.id%>" method="POST">
+  <label>Name:</label>
+  
+  <br></br>
+  
+  <input type="text" name="star[name]" id="star_name" value="<%=@star.name%>">
+  
+  <br></br>
+  
+  <label>Choose an existing student:</label>
+  
+  <br></br>
+  
+  <%Student.all.each do |student|%>
+    <input type="checkbox" name="star[student_id]" value="<%=student.id%>" id="<%=student.name%>" <%='checked' if @star.student.name == student.name %>><%=student.name%></input>
+  <%end%>
+  
+  <br></br>
+  
+  <label>and/or, create a new student:</label>
+  <br></br>
+  <label>name:</label>
+    <input  type="text" name="student[name]" id="student_name"></input>
+  <br></br>
+  <input type="submit" value="Update Star">
+</form>

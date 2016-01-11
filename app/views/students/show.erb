@@ -1,0 +1,7 @@
+<h1><%=@student.name%></h1>
+<h4>Stars:</h4>
+<ul>
+  <%@student.stars.each do |star|%>
+  <li><%=star.name%></li>
+  <%end%>
+</ul>
